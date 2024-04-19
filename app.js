@@ -77,7 +77,17 @@ document.addEventListener("DOMContentLoaded",() => {
     function createBoard(){
             for(let i = 0; i < cards.length; i++){
                 const card = document.createElement('img');
-                card.setAttribute('src', 'img/')
+                card.setAttribute('src', 'imgs/corretoicon.png');
+                card.setAttribute('data-id', i );
+                card.addEventListener('click', flipCard);
+                board.appendChild(card);
             }
+    function flipCard() {
+        let cardId = this.getAttribute('data-id');
+        cardsChosen.push(cards[cardId].name)
+        cardsChosenid.push(cardId);
+        this.setAttribute('src', cards[cardId].img);
     }
+    createBoard();
+}
 });
