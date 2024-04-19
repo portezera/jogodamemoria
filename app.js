@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded",() => {
                 card.addEventListener('click', flipCard);
                 board.appendChild(card);
             }
+    }
     function flipCard() {
         let cardId = this.getAttribute('data-id');
         cardsChosen.push(cards[cardId].name)
@@ -89,5 +90,5 @@ document.addEventListener("DOMContentLoaded",() => {
         this.setAttribute('src', cards[cardId].img);
     }
     createBoard();
-}
+
 });
